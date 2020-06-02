@@ -38,8 +38,17 @@ pocket은 일정한 주기로 목록에 있는 값을 상태값으로 반영하�
 
 ## Usage
 ### configuration
+- HA 설정에 whitelist_external_dirs 속성을 추가해주고 경로를 추가한다.
+```yaml
+# Example configuration.yaml entry
+homeassistant:
+  whitelist_external_dirs:
+     - /config
+     - /config/playlist
+```
 - HA 설정에 pocket sensor를 추가합니다.<br>
 ```yaml
+# Example configuration.yaml entry
 switch:
   - platform: pocket
     scan_interval: 200
@@ -54,6 +63,48 @@ switch:
         name: '슬의생ost'
         file_path: /config/playlist/doctorlife.txt    
 ```
+
+
+### Automation example
+media_player의 상태가 playing에서 idle로 변경되면 서비스 호출하여 재생
+```yaml
+automation:
+- id: 'autoplay'
+  alias: 자동재생
+  description: ''
+  trigger:
+  - entity_id: media_player.mini
+    from: playing
+    platform: state
+    to: idle
+  condition: []
+  action:
+  - data_template:
+      media_content_id: '{{ states.sensor.pocket_miumida4song.state }}'
+      media_content_type: video
+    entity_id: media_player.mini
+    service: media_extractor.play_media
+```
+
+
+### Script example
+재생목록1 재생
+```yaml
+script:
+  'playlist1_play':
+    alias: 재생목록1 재생
+    sequence:
+    - data_template:
+        media_content_id: '{{ states.sensor.pocket_miumida4song.state }}'
+        media_content_type: video
+      entity_id: media_player.mini
+      service: media_extractor.play_media
+    - data: {}
+      entity_id: automation.jadongjaesaeng
+      service: automation.turn_on
+```
+
+
 <br><br>
 ### 기본 설정값
 

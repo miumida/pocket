@@ -55,6 +55,9 @@ homeassistant:
   whitelist_external_dirs:
      - /config
      - /config/playlist
+
+#media_extractor 추가필요(용도에 따라)
+media_extractor:
 ```
 - HA 설정에 pocket sensor를 추가합니다.<br>
 ```yaml

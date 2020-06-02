@@ -8,6 +8,11 @@ Pocket Sensor for Home Assistant 입니다.<br>
 file을 읽어들여 파일의 목록을 sensor로 생성하여 줍니다.<br>
 pocket은 일정한 주기로 목록에 있는 값을 상태값으로 반영하여 줍니다.<br>
 
+switch 1개와 pocket에 지정한 갯수만큼의 pocket sensor가 생성됩니다.<br>
+switch의 경우, on인 동안에는 업데이트 시에 파일을 읽어들여 목록을 반영합니다.<br>
+off로 되어 있는 경우, 이미 존재하는 목록 내에서 상태를 반영합니다.<br>
+
+![screenshot_1](https://github.com/miumida/pocket/blob/master/images/pocket.png?raw=true)<br>
 
 <br>
 

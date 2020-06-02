@@ -14,6 +14,11 @@ off로 되어 있는 경우, 이미 존재하는 목록 내에서 상태를 반�
 
 ![screenshot_1](https://github.com/miumida/pocket/blob/master/images/pocket.png?raw=true)<br>
 
+파일은 '주소' 목록과 '제목|주소' 목록으로 생성할 수 있다.<br>
+
+![screenshot_1](https://github.com/miumida/pocket/blob/master/images/Screenshot1.png?raw=true)<br>
+![screenshot_1](https://github.com/miumida/pocket/blob/master/images/Screenshot2.png?raw=true)<br>
+
 <br>
 
 ## Version history

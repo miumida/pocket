@@ -30,7 +30,7 @@ pocket은 일정한 주기로 목록에 있는 값을 상태값으로 반영하�
 ### HACS
 - HACS > SETTINGS 메뉴 선택. ADD CUSTOM REPOSITORY에 'https://github.com/miumida/pocket' 입력
 - Category에 'integration' 선택 후, 저장
-- HACS > INTEGRATIONS 메뉴 선택 후, naver_weather 검색하여 설치
+- HACS > INTEGRATIONS 메뉴 선택 후, pocket 검색하여 설치
 
 <br>
 

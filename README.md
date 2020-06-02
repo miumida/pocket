@@ -28,9 +28,11 @@ pocket은 일정한 주기로 목록에 있는 값을 상태값으로 반영하�
 - configuration.yaml 파일에 설정을 추가합니다.<br>
 - Home-Assistant 를 재시작합니다<br>
 ### HACS
-- HACS > SETTINGS 메뉴 선택. ADD CUSTOM REPOSITORY에 'https://github.com/miumida/pocket' 입력
-- Category에 'integration' 선택 후, 저장
-- HACS > INTEGRATIONS 메뉴 선택 후, pocket 검색하여 설치
+- HACS > Integrations 메뉴 선택
+- 우측 상단 메뉴 버튼 클릭 후 Custom repositories 선택
+- Add Custom Repository URL 에 'https://github.com/miumida/pocket' 입력,<br>
+  Category에 Integration 선택 후 ADD
+- HACS > Integrations 메뉴에서 우측 하단 + 버튼 누르고 [KR] Pocket 검색하여 설치
 
 <br>
 

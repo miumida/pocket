@@ -1,6 +1,6 @@
 {
   "domain": "pocket",
   "name": "Pocket",
-  "documentation": "https://www.home-assistant.io/integrations/file",
-  "codeowners": ["@fabaff"]
+  "documentation": "https://github.com/miumida/pocket",
+  "codeowners": ["@miumida"]
 }

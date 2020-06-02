@@ -1,2 +1,74 @@
-# pocket
-Pocket Sensor for Home Assistant #HA
+# Pocket 센서
+
+![HAKC)][hakc-shield]
+![HACS][hacs-shield]
+![Version v1.4][version-shield]
+
+Pocket Sensor for Home Assistant 입니다.<br>
+file을 읽어들여 파일의 목록을 sensor로 생성하여 줍니다.<br>
+pocket은 일정한 주기로 목록에 있는 값을 상태값으로 반영하여 줍니다.<br>
+
+
+<br>
+
+## Version history
+| Version | Date        | 내용              |
+| :-----: | :---------: | ----------------------- |
+| v1.0.0  | 2020.06.02  | First version  |
+
+
+<br>
+
+## Installation
+### Manual
+- HA 설치 경로 아래 custom_components 에 파일을 넣어줍니다.<br>
+  `<config directory>/custom_components/pocket/__init__.py`<br>
+  `<config directory>/custom_components/pocket/manifest.json`<br>
+  `<config directory>/custom_components/pocket/switch.py`<br>
+- configuration.yaml 파일에 설정을 추가합니다.<br>
+- Home-Assistant 를 재시작합니다<br>
+### HACS
+- HACS > SETTINGS 메뉴 선택. ADD CUSTOM REPOSITORY에 'https://github.com/miumida/pocket' 입력
+- Category에 'integration' 선택 후, 저장
+- HACS > INTEGRATIONS 메뉴 선택 후, naver_weather 검색하여 설치
+
+<br>
+
+## Usage
+### configuration
+- HA 설정에 pocket sensor를 추가합니다.<br>
+```yaml
+switch:
+  - platform: pocket
+    scan_interval: 200
+    pockets:
+      - id: 'yul2song'
+        name: '율이재생목록'
+        file_path: /config/pocket.txt
+      - id: 'miumida4song'
+        name: '재생목록1'
+        file_path: /config/miumida4song.txt
+      - id: 'doctorlist'
+        name: '슬의생ost'
+        file_path: /config/playlist/doctorlife.txt    
+```
+<br><br>
+### 기본 설정값
+
+|옵션|내용|
+|--|--|
+|platform| (필수) pocket|
+|scan_interval| (옵션) Sensor Update Term / default(900s) |
+|pockets| (옵션) 포켓 리스트 |
+<br>
+
+### pockets 설정값
+|옵션|내용|
+|--|--|
+|id| (필수) pocket 목록 id|
+|name| (필수) pocket 목록 이름 |
+|file_path| (필수) 파일경로 |
+
+[version-shield]: https://img.shields.io/badge/version-v1.0.0-orange.svg
+[hakc-shield]: https://img.shields.io/badge/HAKC-Enjoy-blue.svg
+[hacs-shield]: https://img.shields.io/badge/HACS-Custom-red.svg

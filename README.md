@@ -136,6 +136,6 @@ script:
 |name| (필수) pocket 목록 이름 |
 |file_path| (필수) 파일경로 |
 
-[version-shield]: https://img.shields.io/badge/version-v1.0.0-orange.svg
+[version-shield]: https://img.shields.io/badge/version-v1.0.1-orange.svg
 [hakc-shield]: https://img.shields.io/badge/HAKC-Enjoy-blue.svg
 [hacs-shield]: https://img.shields.io/badge/HACS-Custom-red.svg

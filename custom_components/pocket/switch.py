@@ -128,6 +128,9 @@ class FileSensor(Entity):
         self._file_path = path
         self._state     = None
         self._data      = {}
+        
+        self._now_key   = None
+        self._now_val   = None
 
         self._switch    = switch
         self._api       = api
@@ -157,7 +160,7 @@ class FileSensor(Entity):
 
         if len(self._data) > 0:
             if not self._switch._is_on:
-                tmp = list(self._data.values())
+                tmp = list(self._data.keys())
 
                 random.shuffle(tmp)
 
@@ -168,7 +171,10 @@ class FileSensor(Entity):
                     random.shuffle(tmp)
                     data = random.sample(tmp, 1)[0]
 
-                self._state = data
+                self._state = self._data[data]
+                
+                self._now_key = data
+                self._now_val = self._data[data]
 
                 return
 
@@ -176,7 +182,7 @@ class FileSensor(Entity):
 
         self._data = self._api._data
 
-        tmp = list(self._data.values())
+        tmp = list(self._data.keys())
 
         random.shuffle(tmp)
         data = random.sample(tmp,1)[0]
@@ -186,12 +192,23 @@ class FileSensor(Entity):
             random.shuffle(tmp)
             data = random.sample(tmp,1)[0]
 
-        self._state = data
+        self._state = self._data[data]
+        
+        self._now_key = data
+        self._now_val = self._data[data]
 
     @property
     def device_state_attributes(self):
         """Attributes."""
-        return self._data
+        data = {}
+
+        for key in self._data:
+            data[key] = self._data[key]
+
+        data['now_key'] = self._now_key
+        data['now_val'] = self._now_val
+
+        return data
 
 class pocketAPI:
     """pocketAPI."""
